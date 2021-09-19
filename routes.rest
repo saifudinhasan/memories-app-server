@@ -1,0 +1,25 @@
+GET http://localhost:5000/posts
+
+###
+GET http://localhost:5000/subscribers/6135e42ce48bed0781356370
+
+###
+POST http://localhost:9000/subscribers/
+Content-Type: application/json
+
+{
+  "name": "Muhammad Wildan Hasan",
+  "subscribedToChannel": "WDS"
+}
+
+###
+DELETE http://localhost:9000/subscribers/6136005fa40d3407672fd2ab
+
+###
+PATCH http://localhost:9000/subscribers/6135e63da4718a42f2ca5128
+Content-Type: application/json
+
+{
+  "name": "Saifudin Hasan",
+  "subscribedToChannel": "WPUNPAS"
+}
