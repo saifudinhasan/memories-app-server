@@ -1,9 +1,9 @@
 import express from 'express'
-import bodyParser from 'body-parser'
 import mongoose from 'mongoose'
 import cors from 'cors'
-import postRouter from './routes/posts.js'
 import dotenv from 'dotenv'
+import postRouter from './routes/posts.js'
+import userRouter from './routes/users.js'
 
 const app = express()
 dotenv.config()
@@ -14,9 +14,10 @@ app.use(cors())
 
 // Router must be below cors() to prevent cors block
 app.use('/posts', postRouter)
-app.use('/', (req, res) => {
-  res.send('Hello to memories API')
-})
+app.use('/user', userRouter)
+// app.use('/', (req, res) => {
+//   res.send('Hello to memories API')
+// })
 
 // https://www.mongodb.com/cloud/atlas
 const CONNECTION_URL = process.env.CONNECTION_URL
